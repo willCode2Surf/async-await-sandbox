@@ -3,21 +3,61 @@
 }
 
 <div class="jumbotron">
-    <h1>ASYNC/AWAIT</h1>
+    <h1>What about Async/Await</h1>
     <p></p>
 </div>
 
 <div class="row">
     <div class="col-md-3">
-        <h2>Get</h2>
+        <h2>Sample #1</h2>
+        <ul>
+            <li>Synchronous</li>
+            <li>No Delay</li>
+        </ul>
+        @Html.ActionLink("Sample #1","SampleOne","Samples")
     </div>
     <div class="col-md-3">
-        <h2>Some</h2>
+        <h2>Sample #2</h2>
+        <ul>
+            <li>Synchronous</li>
+            <li>Cascading Delay</li>
+        </ul>
+        @Html.ActionLink("Sample #2", "SampleTwo", "Samples")
     </div>
     <div class="col-md-3">
-        <h2>More</h2>
+        <h2>Sample #3</h2>
+        <ul>
+            <li>Asynchronous</li>
+            <li>No Delay</li>
+        </ul>
+        @Html.ActionLink("Sample #3", "SampleThree", "Samples")
     </div>
     <div class="col-md-3">
-        <h2>Content</h2>
+        <h2>Sample #4</h2>
+        <ul>
+            <li>Asynchronous</li>                          
+            <li>Cascading Delay</li>
+        </ul>
+        @Html.ActionLink("Sample #4", "SampleFour", "Samples")
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h2>Sample #5</h2>
+        <ul>
+            <li>Async</li>
+            <li>No Delay</li>
+            <li>Loaded via Ajax</li>
+        </ul>
+        @Html.ActionLink("Sample #5", "SampleFive", "Samples")
+    </div>
+    <div class="col-md-3">
+        <h2>Sample #6</h2>
+        <ul>
+            <li>Async</li>
+            <li>Cascading Delay</li>
+            <li>Loaded via Ajax</li>
+        </ul>
+        @Html.ActionLink("Sample #6", "SampleSix", "Samples")
     </div>
 </div>

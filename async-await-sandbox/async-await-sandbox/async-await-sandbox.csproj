@@ -121,9 +121,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Models\PerformanceResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,10 +162,16 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Samples\SampleOne.cshtml" />
+    <Content Include="Views\Samples\SampleTwo.cshtml" />
+    <Content Include="Views\Samples\SampleThree.cshtml" />
+    <Content Include="Views\Samples\SampleFour.cshtml" />
+    <Content Include="Views\Samples\_SiteResults.cshtml" />
+    <Content Include="Views\Samples\SampleFive.cshtml" />
+    <Content Include="Views\Samples\SampleSix.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -22,3 +22,46 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+pre {
+        outline: 1px solid #ccc;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .string {
+        color: green;
+    }
+
+    .number {
+        color: darkorange;
+    }
+
+    .boolean {
+        color: blue;
+    }
+
+    .null {
+        color: magenta;
+    }
+
+    .key {
+        color: black;
+        font-weight: 700;
+    }
+
+    .site-results{
+
+        background-color:#e9ecef; 
+        border-radius: 6px; 
+        padding: 30px;
+
+    }
+    .results{
+
+        background-color:#e9ecef; 
+        border-radius: 6px; 
+        padding: 30px;
+
+    }

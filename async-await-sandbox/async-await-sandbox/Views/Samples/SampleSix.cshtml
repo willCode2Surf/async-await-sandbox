@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Sample Six";
+
+}
+
+<h2>Sample #6</h2>
+<h3>Page Load Time:  @ViewBag.PageLoadTime</h3>
+
+<div class="site-check" data-url="@ViewBag.Site1" data-delay="0"></div>
+<div class="site-check" data-url="@ViewBag.Site2" data-delay="250"></div>
+<div class="site-check" data-url="@ViewBag.Site3" data-delay="500"></div>
+<div class="site-check" data-url="@ViewBag.Site4" data-delay="750"></div>
+<div class="site-check" data-url="@ViewBag.Site5" data-delay="1300"></div>
+<div class="site-check" data-url="@ViewBag.Site6" data-delay="2500"></div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.info("sample five");
+
+            $('.site-check').each(function (index, item)
+            {
+                var url = $(item).data('url');
+                var delay = $(item).data('delay');
+                var endpoint = '/Samples/SiteResults?url=' + url + "&delay=" + delay;
+                console.info(index, url, delay);
+                $(item).load(endpoint);
+            });
+
+        });
+    </script>
+}
