@@ -147,5 +147,59 @@ namespace async_await_sandbox.Controllers
             return PartialView("_SiteResults");
         }
 
+
+        public async Task<ActionResult> SampleSeven()
+        {
+            Stopwatch actionTimer = new Stopwatch();
+            actionTimer.Start();
+
+            // Begin the async calls.
+            Task<Models.PerformanceResult> firstCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> secondCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> thirdCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> fourthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> fifthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> sixthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+
+            // Wait for the calls to complete.
+            // Note: `var results = await Task.WhenAll(firstCall, ..., sixthCall);` does the same thing, but the
+            // results are placed in an array.
+            ViewBag.Site1 = await firstCall;
+            ViewBag.Site2 = await secondCall;
+            ViewBag.Site3 = await thirdCall;
+            ViewBag.Site4 = await fourthCall;
+            ViewBag.Site5 = await fifthCall;
+            ViewBag.Site6 = await sixthCall;
+
+            actionTimer.Stop();
+            ViewBag.PageLoadTime = Utils.FormatTimeSpan(actionTimer.Elapsed);
+            return View();
+        }
+
+        public async Task<ActionResult> SampleEight()
+        {
+            Stopwatch actionTimer = new Stopwatch();
+            actionTimer.Start();
+
+            // Begin the async calls.
+            Task<Models.PerformanceResult> firstCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com");
+            Task<Models.PerformanceResult> secondCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com", 250);
+            Task<Models.PerformanceResult> thirdCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com", 500);
+            Task<Models.PerformanceResult> fourthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com", 750);
+            Task<Models.PerformanceResult> fifthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com", 1300);
+            Task<Models.PerformanceResult> sixthCall = Utils.VerifyURLUpAsync("https://www.smoothfusion.com", 2500);
+
+            // Wait for the calls to complete.
+            ViewBag.Site1 = await firstCall;
+            ViewBag.Site2 = await secondCall;
+            ViewBag.Site3 = await thirdCall;
+            ViewBag.Site4 = await fourthCall;
+            ViewBag.Site5 = await fifthCall;
+            ViewBag.Site6 = await sixthCall;
+
+            actionTimer.Stop();
+            ViewBag.PageLoadTime = Utils.FormatTimeSpan(actionTimer.Elapsed);
+            return View();
+        }
     }
 }
